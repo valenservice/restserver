@@ -35,7 +35,7 @@ let verificaAdmin_Role = (req, res, next) => {
         return res.json({
             ok: false,
             err: {
-                message: 'El Usuario no es Administrador';
+                message: 'El Usuario no es Administrador'
             }
         });
     }
