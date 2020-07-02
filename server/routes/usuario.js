@@ -3,9 +3,14 @@ const bcrypt = require('bcrypt');
 const _ = require('underscore');
 const Usuario = require('../models/usuario');
 const { verificarToken, verificaAdmin_Role } = require('../middlewares/authentication');
+const cors = require('cors')
 const app = express()
 
+app.use(cors())
+
 app.get('/usuario', verificarToken, (req, res) => {
+
+    res.header('Access-Control-Allow-Origin', '*');
 
     // return res.json({
     //     usuario: req.usuario,
